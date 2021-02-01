@@ -9,6 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class EmployeeList {
     private static ArrayList<Employee> employee = new ArrayList<>();
@@ -183,14 +184,30 @@ public class EmployeeList {
     		System.out.println("There are no employees in this department.");
     	}
     	else {
-
-    	  	int index = findEmployee(in);
-    	  	System.out.println(employee.get(index));
-    	  	
-    	  	
+    		System.out.println("Do you want to list one or all employees?"
+    				+ "\nAll\t - 1"
+    				+ "\nOne\t - 2");
+        	int select = Integer.parseInt(in.nextLine());
+			
+        	switch(select) {
+	    		case 1:
+	    			System.out.println("Listing all employees' salaries above 5,000");
+	    			
+	    			Stream<Employee> employeeStream = employee.stream();
+	    			employeeStream.filter(e -> e.getSalary() > 5000)
+	    							.forEach(i -> System.out.println(i));
+	    			
+	    			break;
+	    		case 2:
+	        	  	int index = findEmployee(in);
+	        	  	System.out.println(employee.get(index));
+	        	  	
+	    			break;
+        	}
     	}
 	  	
     }
+
     
     public static boolean anyEmployees() {
     	if(employee.size() == 0) {
