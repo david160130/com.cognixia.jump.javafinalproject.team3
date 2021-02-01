@@ -28,7 +28,8 @@ public class EmployeeList {
     	Scanner in = new Scanner(System.in);
     	System.out.println("Please enter the employee's ID");
     	int desiredID = Integer.parseInt(in.nextLine());
-    	int index = -1;
+    	in.close();
+//    	int index = -1;
     	for(int i = 0; i < employee.size(); i++) {
     		if(employee.get(i).getEmpId() == desiredID) {
     			return i;
@@ -94,6 +95,7 @@ public class EmployeeList {
 			employee.get(index).setExt(Integer.parseInt(in.nextLine()));
 			break;
     	}
+    	in.close();
     	
 //    	for(Employee a : employee) {
 //    		System.out.println(a);

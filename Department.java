@@ -7,12 +7,15 @@ public class Department {
     private String cell;
     private int budget;
     private int sizeOfDept = 0;
+    private static int idCounter = 0;
+    private int deptID;
     private ArrayList<Employee> deptList = new ArrayList<>();
 
     public Department(String name, String cell, int budget) {
         this.name = name;
         this.cell = cell;
         this.budget = budget;
+        this.deptID = idCounter++;
     }
 
     public String getName() {
@@ -47,7 +50,11 @@ public class Department {
         this.sizeOfDept = sizeOfDept;
     }
 
-    public void addEmployee(Employee emp){
+	public int getDeptID() {
+		return deptID;
+	}
+
+	public void addEmployee(Employee emp){
         deptList.add(emp);
         sizeOfDept++;
     }

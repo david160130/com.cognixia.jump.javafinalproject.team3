@@ -11,6 +11,7 @@ public class Employee {
     private int salary;
     private String DOB;
     private int ext;
+    private int deptID;
 
 
     public Employee(String name, String jobTitle, int salary, String DOB, int ext) {
