@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class runner {
     public static void main(String [] args){
     	
+    	
+//    	EmployeeList.saveEmployees();
+    	
+    	
+    	
     	//Ask user if they want to access either the departments or the employees
     	Scanner scan = new Scanner(System.in);
     	
@@ -109,7 +114,9 @@ public class runner {
         			+ "\nUpdate an employee\t- 2"
         			+ "\nRemove an employee\t- 3"
         			+ "\nList employees\t\t- 4"
-        			+ "\nReturn to main menu\t- 5");
+        			+ "\nSave employees\t\t- 5"
+        			+ "\nLoad employees\t\t- 6"
+        			+ "\nReturn to main menu\t- 7");
 
         	int select = Integer.parseInt(scan.nextLine());
 
@@ -132,6 +139,14 @@ public class runner {
 	    			EmployeeList.listEmployees(scan);
 	    			break;
 	    		case 5:
+	    			System.out.println("Saving the current employee list was accepted.");
+	    			EmployeeList.saveEmployees();
+	    			break;
+	    		case 6:
+	    			System.out.println("Loading the a preexisting employee list was accepted.");
+	    			EmployeeList.loadEmployees();
+	    			break;
+	    		case 7:
 	    			System.out.println("Returning to main menu...");
 	    			exitLoopEmployees = false;
 	    			break;
