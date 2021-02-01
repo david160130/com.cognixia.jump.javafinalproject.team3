@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class DeptList {
     private static ArrayList<Department> deptList = new ArrayList<>();
+    
+    
+    public static void createDept() {
+    	
+    }
 
     public static void addDept(){
         Scanner in = new Scanner(System.in);
@@ -17,5 +22,13 @@ public class DeptList {
         deptList.add(d);
         System.out.println(d);
         in.close();
+    }
+    
+    public static void updateDept() {
+    	
+    }
+    
+    public static void removeDept() {
+    	
     }
 }
