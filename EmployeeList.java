@@ -40,6 +40,10 @@ public class EmployeeList {
     	
     }
     
+    public static Employee findEmployee(int index) {
+    	return employee.get(index);
+    }
+    
     public static void updateEmployee() {
 
 
@@ -123,7 +127,7 @@ public class EmployeeList {
 //	  		System.out.println(a);
 //	  	}
 	  	
-    }
+    } 
     
     public static void listEmployees() {
     	

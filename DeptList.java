@@ -92,4 +92,15 @@ public class DeptList {
  	     	
     	
     }
+    
+    public static void addEmpToDept() {
+    	System.out.println("You have chosen to add an employee to a department");
+    	int deptIndex = findDept();
+    	System.out.println("You have chosen " + deptList.get(deptIndex).getName());
+    	int empIndex = EmployeeList.findEmployee();
+    	Employee e = EmployeeList.findEmployee(empIndex);
+    	System.out.println("You have chosen employee: " + e.getName());
+    	deptList.get(deptIndex).addEmployee(e);
+    	e.setDeptID(deptList.get(deptIndex).getDeptID());
+    }
 }
