@@ -14,7 +14,22 @@ public class EmployeeList {
         System.out.println("Enter employee salary: ");
         int salary = Integer.parseInt(in.nextLine());
         System.out.println("Enter employee age: ");
-        int age = Integer.parseInt(in.nextLine());
+        int age = 0;
+        
+        try {
+         age = Integer.parseInt(in.nextLine());
+        //have potential employee enter their age, if they are under 18
+        //custom exception will be thrown
+        if (age < 18) throw new Exceptions1 ("you must be 18 or older");
+        
+        }catch(Exceptions1 customCode) {
+        	
+        	customCode.getAgeCode();
+        }
+        
+    
+        
+        
         System.out.println("Enter employee extension: ");
         int ext = Integer.parseInt(in.nextLine());
         Employee e = new Employee(name, jobTitle, salary, age, ext);
