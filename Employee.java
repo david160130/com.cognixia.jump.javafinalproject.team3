@@ -8,16 +8,16 @@ public class Employee {
     private String name;
     private String jobTitle;
     private int salary;
-    private String DOB;
+    private int age;
     private int ext;
     private int deptID;
 
 
-    public Employee(String name, String jobTitle, int salary, String DOB, int ext) {
+    public Employee(String name, String jobTitle, int salary, int age, int ext) {
         this.name = name;
         this.jobTitle = jobTitle;
         this.salary = salary;
-        this.DOB = DOB;
+        this.age = age;
         this.ext = ext;
         this.empId = empIdCounter++;
     }
@@ -50,12 +50,12 @@ public class Employee {
         this.salary = salary;
     }
 
-    public String getDOB() {
-        return DOB;
+    public int getAge() {
+        return age;
     }
 
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public int getExt() {
@@ -76,7 +76,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return empId + " " + this.name + " " + this.jobTitle + " " + this.salary + " " + this.DOB + " " + this.ext;
+        return empId + " " + this.name + " " + this.jobTitle + " " + this.salary + " " + this.age + " " + this.ext;
     }
 
 	public int getDeptID() {

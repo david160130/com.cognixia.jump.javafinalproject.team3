@@ -7,7 +7,7 @@ public class Department {
     private String cell;
     private int budget;
     private int sizeOfDept = 0;
-    private static int idCounter = 0;
+    private static int idCounter = 1;
     private int deptID;
     private ArrayList<Employee> deptList = new ArrayList<>();
 
@@ -58,6 +58,14 @@ public class Department {
         deptList.add(emp);
         sizeOfDept++;
     }
+	
+	public void removeEmployee(Employee emp) {
+		for (int i = 0; i < deptList.size(); i++ ) {
+			if (deptList.get(i) == emp) {
+				deptList.remove(i);
+			}
+		}
+	}
 
     @Override
     public String toString(){
