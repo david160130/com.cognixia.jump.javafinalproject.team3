@@ -133,7 +133,7 @@ public class DeptList {
     }
     
     public static void removeEmpFromDept(Scanner in) {
-    	System.out.println("You have chosen to remove an employee to a department");
+    	System.out.println("You have chosen to remove an employee from a department");
     	int deptIndex = findDept(in);
     	System.out.println("You have chosen " + deptList.get(deptIndex).getName());
     	int empIndex = EmployeeList.findEmployee(in);
