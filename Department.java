@@ -1,9 +1,18 @@
 package com.cognixia.jump.employeeproject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Department {
-    private String name;
+public class Department implements Serializable {
+	
+	
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	private String name;
     private String cell;
     private int budget;
     private int sizeOfDept = 0;

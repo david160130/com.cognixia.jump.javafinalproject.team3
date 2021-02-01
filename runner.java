@@ -39,7 +39,7 @@ public class runner {
 				exitLoop = false;
 				break;
 			default:
-				System.out.println("An error has occurred, exiting system.");
+				System.out.println("An error has occurred, try again.");
 				break;
 	    	}
 	    	
@@ -62,7 +62,9 @@ public class runner {
         			+ "\nUpdate a department\t- 2"
         			+ "\nRemove a department\t- 3"
         			+ "\nList a department\t- 4"
-        			+ "\nReturn to main menu\t- 5");
+        			+ "\nSave a department\t- 5"
+        			+ "\nLoad a department\t- 6"
+        			+ "\nReturn to main menu\t- 7");
 
         	int select = Integer.parseInt(scan.nextLine());
 
@@ -85,6 +87,14 @@ public class runner {
 	    			DeptList.listDept(scan);
 	    			break;
 	    		case 5:
+	    			System.out.println("Saving the current department list was selected.");
+	    			DeptList.saveEmployees();
+	    			break;
+	    		case 6:
+	    			System.out.println("Loading a preexisting department list was selected.");
+	    			DeptList.loadEmployees();
+	    			break;
+	    		case 7:
 	    			System.out.println("Returning to main menu...");
 	    			exitLoopDept = false;
 	    			break;

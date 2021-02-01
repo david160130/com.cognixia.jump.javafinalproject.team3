@@ -1,5 +1,12 @@
 package com.cognixia.jump.employeeproject;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class DeptList {
@@ -7,7 +14,7 @@ public class DeptList {
     
 
     public static void addDept(Scanner in){
-//        Scanner in = new Scanner(System.in);
+//        Scanner in = new Scanner(System.in);2
         System.out.println("Enter Department name: ");
         String deptName = in.nextLine();
         System.out.println("Enter Department number: ");
@@ -157,6 +164,96 @@ public class DeptList {
  			break;
      	}
 	}
+    
+    
+    public static File createFile() {
+    	
+		File folder = new File("resources");
+		
+		if(!folder.exists()) {
+			folder.mkdir();
+		}
+		else {			
+		}
+
+		File file = new File("resources/departments.txt");
+    	
+		if(!file.exists()) {
+			try {
+				file.createNewFile();
+//				System.out.println("File created");
+			} catch (IOException e) {
+//				System.out.println("File not created");
+//				e.printStackTrace();
+			}
+		}
+		return file;
+    }
+    
+    public static void saveEmployees() {
+    	
+    	File file = createFile();
+    	
+    	
+		try(FileOutputStream out = new FileOutputStream(file);
+				ObjectOutputStream writer = new ObjectOutputStream(out) ){
+			
+//			for(int i = 0; i < employee.size(); i++) {
+			
+
+			
+			writer.writeObject(deptList.toArray());
+				
+//			}
+			
+			System.out.println("It prints!");
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	
+    	
+    }
+    
+    
+    public static void loadEmployees() {
+
+    	File file = createFile();
+    	
+		try (FileInputStream in = new FileInputStream(file);
+				ObjectInputStream reader = new ObjectInputStream(in)){
+			
+			deptList.clear();
+			
+			Object[] departments = (Object[]) reader.readObject();
+			
+			for(int i = 0; i < departments.length; i++) {
+				
+				
+				deptList.add((Department) departments[i]);
+			
+				
+			}
+			
+		} catch (IOException e4) {
+			// TODO Auto-generated catch block
+			e4.printStackTrace();
+		} catch (ClassNotFoundException e4) {
+			// TODO Auto-generated catch block
+			e4.printStackTrace();
+		}
+		
+		System.out.println("The list loaded just now is: ");
+		for(Department a : deptList) {
+			System.out.println(a);
+		}
+		
+		
+    	
+    }
+    
     
     public static boolean anyDept() {
     	if(deptList.size() == 0) {

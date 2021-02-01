@@ -1,9 +1,17 @@
 package com.cognixia.jump.employeeproject;
 
+import java.io.Serializable;
 
-public class Employee {
+public class Employee implements Serializable{
 
-    private static int empIdCounter = 1;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	
+	private static int empIdCounter = 1;
     private  int empId = 0;
     private String name;
     private String jobTitle;

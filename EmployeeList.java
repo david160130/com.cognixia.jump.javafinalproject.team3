@@ -131,7 +131,7 @@ public class EmployeeList {
 				employee.get(index).setSalary(Integer.parseInt(in.nextLine()));
 				break;
 			case 4:
-				System.out.println("Date of birth selected. Input new age: ");
+				System.out.println("Age selected. Input new age: ");
 				employee.get(index).setAge(Integer.parseInt(in.nextLine()));
 				break;
 			case 5:
@@ -271,7 +271,8 @@ public class EmployeeList {
 		try (FileInputStream in = new FileInputStream(file);
 				ObjectInputStream reader = new ObjectInputStream(in)){
 			
-			
+			employee.clear();
+						
 			Object[] employees = (Object[]) reader.readObject();
 			
 			for(int i = 0; i < employees.length; i++) {
