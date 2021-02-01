@@ -1,6 +1,5 @@
 package com.cognixia.jump.employeeproject;
 
-import java.util.ArrayList;
 
 public class Employee {
 
@@ -79,4 +78,13 @@ public class Employee {
     public String toString() {
         return empId + " " + this.name + " " + this.jobTitle + " " + this.salary + " " + this.DOB + " " + this.ext;
     }
+
+	public int getDeptID() {
+		return deptID;
+	}
+
+
+	public void setDeptID(int deptID) {
+		this.deptID = deptID;
+	}
 }
